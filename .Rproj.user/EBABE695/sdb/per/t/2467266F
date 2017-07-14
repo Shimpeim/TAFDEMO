@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "require(plyr)\nrequire(tidyr)\nrequire(tidyverse)\n\n\nDIR.data <- \"./Data\"\nFN.data  <- \"data1.csv\"\ndata1 <- read.csv(sprintf(\"%s/%s\",DIR.data,FN.data)) %>%\n  mutate(week=as.factor(week))\n\nlevels(data1$class) <- c(\"F0\",\"F1\",\"F2\",\"F3\",\"F4\")\nlevels(data1$base) <- c(\"F0\",\"F1\",\"F2\",\"F3\",\"F4\")\n\n\nplot1 <- ggplot(data1,aes(x=week,y=class,group=id))\nplot1_geom <- geom_line(position=position_dodge(width=0.2))\nplot1_facet <- facet_wrap(~base,nrow=2)\nplot(plot1+plot1_geom +plot1_facet)",
+    "created" : 1500001341455.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3686627747",
+    "id" : "2467266F",
+    "lastKnownWriteTime" : 1500005161,
+    "last_content_update" : -2147483648,
+    "path" : "C:/Users/A130101/Desktop/R_programme/TAFDEMO/Prog/pg1.R",
+    "project_path" : "Prog/pg1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
